@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<!--[if IE 8]>         
+<html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> 
+<html class="no-js" lang="en"> <!--<![endif]-->
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="viewport" content="width=device-width">
+
+		<!-- bootstrap -->
+		<link rel="stylesheet" type="text/css" href="./bower_components/bootstrap/dist/css/bootstrap.css">
+
+		<!-- kibana main css -->
+		<link rel="stylesheet" type="text/css" href="../../styles/main.css">
+		<!-- logmon main css -->
+
+		<!-- jquery -->
+		<script type="text/javascript" src="./bower_components/jquery.js"></script>
+		<!-- logmon script -->
+		<script type="text/javascript" src="./js/main.js"></script>
+
+	</head>
+	<body class="application-settings">
+		<div class="toaster-container ng-isolate-scope" list="notifList">
+			<ul class="toaster">
+				<!-- ngRepeat: notif in list -->
+			</ul>
+		</div>
+		<div class="content" style="">
+			<nav class="hide navbar navbar-inverse navbar-static-top show">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<span class="navbar-brand visible-xs ng-binding">Settings
+					</span>
+				</div>
+
+				<!-- Full navbar -->
+				<div collapse="!showCollapsed" class="navbar-collapse collapse" id="kibana-primary-navbar" style="height: 0px;">
+					<ul class="nav navbar-nav" role="navigation">
+						<li class="logo hidden-xs"></li>
+						<!-- ngRepeat: app in apps.inOrder | filter:{show: true} -->
+						<li class="ng-scope">
+							<a href="#/discover">Discover</a>
+						</li><!-- end ngRepeat: app in apps.inOrder | filter:{show: true} -->
+						<li class="ng-scope">
+							<a href="#/visualize">Visualize</a>
+						</li><!-- end ngRepeat: app in apps.inOrder | filter:{show: true} -->
+						<li class="ng-scope">
+							<a href="#/dashboard">Dashboard</a>
+						</li><!-- end ngRepeat: app in apps.inOrder | filter:{show: true} -->
+						<li class="ng-scope active">
+							<a href="#/settings">Settings</a>
+						</li><!-- end ngRepeat: app in apps.inOrder | filter:{show: true} -->
+					</ul>
+					<!-- ngIf: setupComplete -->
+				<!-- /Full navbar -->
+				</div>
+			</nav>
+
+			<config class="ng-isolate-scope ng-hide"></config>
+
+			<!-- ngView:  -->
+			<div class="application ng-scope" ng-view="">
+				<kbn-settings-app section="indices" class="ng-scope ng-isolate-scope">
+					<div class="app-container">
+						<nav class="navbar navbar-default navbar-static-top subnav">
+							<div class="container-fluid">
+								<ul class="nav navbar-nav">
+								<!-- ngRepeat: section in sections -->
+								<li class="ng-scope">
+									<a class="navbar-link ng-binding" href="#/settings/indices">Indices</a>
+								</li><!-- end ngRepeat: section in sections -->
+								<li class="ng-scope">
+									<a class="navbar-link ng-binding" href="#/settings/advanced">Advanced</a>
+								</li><!-- end ngRepeat: section in sections -->
+								<li class="ng-scope">
+									<a class="navbar-link ng-binding" href="#/settings/objects">Objects</a>
+								</li><!-- end ngRepeat: section in sections -->
+								<li class="ng-scope">
+									<a class="navbar-link ng-binding" href="#/settings/about">About</a>
+								</li><!-- end ngRepeat: section in sections -->
+								<li class="ng-scope active">
+									<a class="navbar-link ng-binding" href="#/settings/about">logmon</a>
+								</li><!-- end ngRepeat: section in sections -->
+								</ul>
+							</div>
+						</nav>
+					</div>
+				</kbn-settings-app>
+
+				<!-- logmon html -->
+				<div>
+					
+				</div>
+				<!-- logmon html -->
+			</div>
+		</div>
+	</body>
+</html>
