@@ -1,0 +1,22 @@
+{
+  "name": "logmon",
+  "version": "0.0.0",
+  "homepage": "https://github.com/r2fresh/logmon",
+  "authors": [
+    "r2fresh <r2fresh.kim@kt.com"
+  ],
+  "description": "kt logmon",
+  "main": "main.js",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "~3.3.5",
+    "font-awesome": "~4.3.0"
+  }
+}
